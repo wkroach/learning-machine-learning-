@@ -1,7 +1,7 @@
 """ 
     naive bayes code and simple testing data
     adapted from MLIA in python 3.5.1
-    
+    test on surface3
 """
 
 def load_data_set():
