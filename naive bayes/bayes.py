@@ -33,7 +33,7 @@ def set_of_words_2_vec(vocab_list, input_set):
 def train_nb0 (train_martix, train_category):
     num_train_docs = len(train_martix)
     num_words = len(train_martix[0])
-    p_abusive = sum(train_category)/float(num_train_docs)
+    p_abusive = sum(train_category) / float(num_train_docs)
     p0_num = zeros(num_words); p1_num = zeros(num_words)
     p0_denom = 0.0; p1_denom = 0.0
     for i in range(num_train_docs):
@@ -43,7 +43,7 @@ def train_nb0 (train_martix, train_category):
         else:
             p0_num += train_martix[i]
             p0_denom += sum(train_martix[i])
-    p1_vect = p1_num/p1_denom
-    p0_vect = p0_num/p0_denom
+    p1_vect = p1_num / p1_denom
+    p0_vect = p0_num / p0_denom
     return p0_vect, p1_vect, p_abusive
 
