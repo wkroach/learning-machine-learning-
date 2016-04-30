@@ -129,8 +129,7 @@ def handwriting_class_test():
     print("\nthe total error rate is: %f" % (error_count/float(m_test)))#注意格式化的格式问题，要先将结果算出再带入格式化
 
         
-    
-    
+      
     
     
     
