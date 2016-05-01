@@ -1,7 +1,7 @@
 """ 
     naive bayes code and simple testing data
     adapted from MLIA in python 3.5.1
-    
+    test on surface3
 """
 from numpy import*
 
@@ -40,9 +40,18 @@ def train_nb0 (train_martix, train_category):
 	train_martix为训练词向量集，train_category为训练集的标签'''
     num_train_docs = len(train_martix)
     num_words = len(train_martix[0])
+<<<<<<< HEAD
+    p_abusive = sum(train_category) / float(num_train_docs)
+=======
     p_abusive = sum(train_category)/float(num_train_docs)
+<<<<<<< HEAD
     p0_num = ones(num_words); p1_num = ones(num_words)#初始分子为1，分母为2，防止概率为0和1时对结果产生较大影响
     p0_denom = 2.0; p1_denom = 2.0
+=======
+>>>>>>> fd4ee23c22e5897c0433d6cc4dcdf1771c212794
+    p0_num = zeros(num_words); p1_num = zeros(num_words)
+    p0_denom = 0.0; p1_denom = 0.0
+>>>>>>> 98b9103baed956aa38b52d173e091d96007cc629
     for i in range(num_train_docs):
         if train_category[i] == 1:
             p1_num += train_martix[i]
@@ -50,8 +59,18 @@ def train_nb0 (train_martix, train_category):
         else:
             p0_num += train_martix[i]
             p0_denom += sum(train_martix[i])
+<<<<<<< HEAD
     p1_vect = log(p1_num/p1_denom)
     p0_vect = log(p0_num/p0_denom)
+=======
+<<<<<<< HEAD
+    p1_vect = p1_num / p1_denom
+    p0_vect = p0_num / p0_denom
+=======
+    p1_vect = p1_num/p1_denom
+    p0_vect = p0_num/p0_denom
+>>>>>>> fd4ee23c22e5897c0433d6cc4dcdf1771c212794
+>>>>>>> 98b9103baed956aa38b52d173e091d96007cc629
     return p0_vect, p1_vect, p_abusive
 
 def classify_nb(vec2_classify, p0_vect,p1_vect,p_class1):
