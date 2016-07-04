@@ -138,10 +138,6 @@ def spamTest ():
     print ('the error rate is: ', errorCount / len (testSet))
 
     
-<<<<<<< HEAD
-=======
-#spamTest()
->>>>>>> c32eaef15dc1c0633d23a9592209aa988bf0086e
     
     
     
